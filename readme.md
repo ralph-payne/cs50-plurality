@@ -1,11 +1,22 @@
-**Description**
+### How to Compile and Run
+```bash
+# Compile C file
+gcc plurality.c
+
+# Run file
+./a.out
+```
+
+
+## Description of Problem Set
 Plurality Problem Set for CS50 with notes
 
 https://cs50.harvard.edu/x/2020/psets/3/plurality/
 
-**Plurality**
+**Plurality Instructions
 Implement a program that runs a plurality election, per the below.
 
+```bash
 $ ./plurality Alice Bob Charlie
 Number of voters: 4
 Vote: Alice
@@ -13,12 +24,16 @@ Vote: Bob
 Vote: Charlie
 Vote: Alice
 Alice
-Background
+```
+
+
+### Background
 Elections come in all shapes and sizes. In the UK, the Prime Minister is officially appointed by the monarch, who generally chooses the leader of the political party that wins the most seats in the House of Commons. The United States uses a multi-step Electoral College process where citizens vote on how each state should allocate Electors who then elect the President.
 
 Perhaps the simplest way to hold an election, though, is via a method commonly known as the “plurality vote” (also known as “first-past-the-post” or “winner take all”). In the plurality vote, every voter gets to vote for one candidate. At the end of the election, whichever candidate has the greatest number of votes is declared the winner of the election.
 
-Getting Started
+
+### Getting Started
 Here’s how to download this problem’s “distribution code” (i.e., starter code) into your own CS50 IDE. Log into CS50 IDE and then, in a terminal window, execute each of the below.
 
 Execute cd to ensure that you’re in ~/ (i.e., your home directory).
@@ -39,10 +54,12 @@ Now, take a look at the main function itself. See if you can find where the prog
 
 If you look further down in the file, though, you’ll notice that the vote and print_winner functions have been left blank. This part is up to you to complete!
 
-Specification
+
+### Specification
 Complete the implementation of plurality.c in such a way that the program simulates a plurality vote election.
 
-Complete the vote function.
+
+### Complete the vote function.
 vote takes a single argument, a string called name, representing the name of the candidate who was voted for.
 If name matches one of the names of the candidates in the election, then update that candidate’s vote total to account for the new vote. The vote function in this case should return true to indicate a successful ballot.
 If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot.
@@ -53,16 +70,19 @@ It is possible that the election could end in a tie if multiple candidates each 
 You should not modify anything else in plurality.c other than the implementations of the vote and print_winner functions (and the inclusion of additional header files, if you’d like).
 
 
-**Usage**
+### Usage
 Your program should behave per the examples below.
 
+```bash
 $ ./plurality Alice Bob
 Number of voters: 3
 Vote: Alice
 Vote: Bob
 Vote: Alice
 Alice
+```
 
+```bash
 $ ./plurality Alice Bob
 Number of voters: 3
 Vote: Alice
@@ -70,7 +90,9 @@ Vote: Charlie
 Invalid vote.
 Vote: Alice
 Alice
+```
 
+```bash
 $ ./plurality Alice Bob Charlie
 Number of voters: 5
 Vote: Alice
@@ -80,26 +102,29 @@ Vote: Bob
 Vote: Alice
 Alice
 Bob
+```
 
 
-**Testing**
+### Testing
 Be sure to test your code to make sure it handles…
 
-An election with any number of candidate (up to the MAX of 9)
-Voting for a candidate by name
-Invalid votes for candidates who are not on the ballot
-Printing the winner of the election if there is only one
-Printing the winner of the election if there are multiple winners
+- An election with any number of candidate (up to the MAX of 9)
+- Voting for a candidate by name
+- Invalid votes for candidates who are not on the ballot
+- Printing the winner of the election if there is only one
+- Printing the winner of the election if there are multiple winners
+
 Execute the below to evaluate the correctness of your code using check50. But be sure to compile and test it yourself as well!
-
+```bash
 check50 cs50/problems/2020/x/plurality
+```
+
 Execute the below to evaluate the style of your code using style50.
-
+```bash
 style50 plurality.c
+```
 
 
-**How to Submit**
+### How to Submi
 How to Submit
 Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (*) instead of the actual characters in your password.
-
-submit50 cs50/problems/2020/x/pluralityset up ssl for ubuntu migration on 22.05.20

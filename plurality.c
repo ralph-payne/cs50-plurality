@@ -1,3 +1,5 @@
+// CS50 Problem Set 3: Plurality
+
 #include "cs50.h"
 #include "cs50.c"
 #include <stdio.h>
@@ -6,13 +8,13 @@
 /* 
 The define directive allows the definition of macros within your source code. These macro definitions allow constant values to be declared for use throughout your code.
 Macro definitions are not variables and cannot be changed by your program code like variables. You generally use this syntax when creating constants that represent numbers, strings or expressions
-Most C programmers define their constnat names in upper case, but it is not a requirement of the C Language
+Most C programmers define their constant names in upper case, but it is not a requirement of the C Language
 Note: Do NOT put a semicolon at the end of #define statements. This is a common mistake.
 */
 // MAX is a constant that represents the maximum number of candidates an election can have
 #define MAX 9
 
-// Define a struct called candidate. Each candidate has two fields: a string called name representing the candidates's name, and an int called votes representing the number of votes the candidate has
+// Define a struct called candidate. Each candidate has two fields: a string called name representing the candidate's name, and an int called votes representing the number of votes the candidate has
 // Candidates have name and vote count
 typedef struct
 {
@@ -81,7 +83,7 @@ int main(int argc, string argv[])
 Iteration 1
 Complete the vote function
 (1) vote takes a single argument (a string called name)
-(2) (ai) If name is equal to one of the names of the candidates in the election, then add one to that candidate's vote total. (aii) The vote function should then return true to indidicate a sucessful ballot (b) If name does not match the name of any of the candidates in the election, no vote totals shoudl change and the vote function should return false to indicate an invalid ballot
+(2) (ai) If name is equal to one of the names of the candidates in the election, then add one to that candidate's vote total. (aii) The vote function should then return true to indicate a successful ballot (b) If name does not match the name of any of the candidates in the election, no vote totals should change and the vote function should return false to indicate an invalid ballot
 */
 
 
@@ -110,7 +112,7 @@ bool vote(string name)
 /*
 Iteration 2
 (3) The function should print out the name of the candidate who received the most votes in the election, and then print a newline
-(4) It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes. In that case, you shoudl output the names of each of the winning candidates, each on a separate line
+(4) It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes. In that case, you should output the names of each of the winning candidates, each on a separate line
 */
 
 // Print the winner (or winners) of the election
@@ -119,7 +121,7 @@ void print_winner(void)
     // Declare a variable (an integer) that stores the number of votes that the winning candidate received
     int winning_number = 0;
 
-    // Loop 1: Loop through each of the candidates. If the number of votes for the i'th candidate is greater then the winning_number, then the winning number should be updated with the number of votes for the i'th candidate
+    // Loop 1: Loop through each of the candidates. If the number of votes for the ith candidate is greater then the winning_number, then the winning number should be updated with the number of votes for the ith candidate
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > winning_number)
@@ -129,7 +131,7 @@ void print_winner(void)
         // Note to self: I am assuming here that I don't need an else as if the number of votes is not bigger than the winning number, then the loop will move onto the next candidate
     }
 
-    // Loop 2: Loop throught the candidates again. If the number of votes is equal to the winning number, then print out the i'th candidate's name
+    // Loop 2: Loop through the candidates again. If the number of votes is equal to the winning number, then print out the ith candidate's name
     for (int j = 0; j < candidate_count; j++)
     {
         if (candidates[j].votes == winning_number)
